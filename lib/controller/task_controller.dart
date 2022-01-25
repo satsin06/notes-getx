@@ -3,7 +3,6 @@ import 'package:notes/models/task_mode.dart';
 
 class TaskController extends GetxController {
   RxList<Task> tasks = <Task>[].obs;
-  RxBool darkTheme = false.obs;
 
   void addtask(Task task) {
     tasks.add(task);

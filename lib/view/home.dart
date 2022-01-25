@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:notes/controller/darktheme_controller.dart';
 import 'package:notes/view/add_task.dart';
 import 'package:notes/controller/task_controller.dart';
 
@@ -9,6 +10,9 @@ class HomePage extends StatelessWidget {
   final TaskController _taskController = Get.put(
     TaskController(),
   );
+
+  final DarkthemeController _darkThemeController =
+      Get.put(DarkthemeController());
 
   final List<String> days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
 
@@ -20,8 +24,9 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                _taskController.darkTheme.value =
-                    !_taskController.darkTheme.value;
+                _darkThemeController.darkTheme.value =
+                    !_darkThemeController.darkTheme.value;
+                print('clicked');
               },
               icon: const Icon(Icons.brightness_2))
         ],
